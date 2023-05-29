@@ -10,7 +10,7 @@ import ipdb
 
 def create_project_dict():
     html = ''
-    with open('./fixtures/kickstarter.html') as file:
+    with open('../fixtures/kickstarter.html') as file:
         html = file.read()
     kickstarter = BeautifulSoup(html, 'html.parser')
     projects = {}
@@ -24,7 +24,7 @@ def create_project_dict():
         'percent_funded': project.select("ul.project-stats li.first.funded strong")[0].text.replace("%","")
         }
     # return the projects dictionary
-
+    ipdb.set_trace()
     return projects
 
 projects = create_project_dict()
